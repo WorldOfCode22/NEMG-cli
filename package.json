@@ -1,0 +1,15 @@
+{
+  "name": "nemg-cli",
+  "version": "0.1.0",
+  "description": "A Command Line Interface for a Node, MongoDb/Mongoose, Express, GraphQL backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sloan Gwaltney",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.14.1",
+    "inquirer": "^5.1.0"
+  }
+}
