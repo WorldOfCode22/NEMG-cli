@@ -37,7 +37,7 @@ module.exports = function(){
           console.log("Error Occurred Making Base Project File "+err);
         }else{
           console.log("Base File Created");
-          fs.writeFile('./'+answers.projectName+'/.env', envText(answers.databaseURI,answers.port),(err)=>{
+          fs.writeFile('./'+answers.projectName+'/.env', envText(answers.projectName,answers.databaseURI,answers.port),(err)=>{
             if(err){
               console.log("Error Creating .env File: "+ err);
             }else{
@@ -47,6 +47,21 @@ module.exports = function(){
                   console.log("Error Creating NPM package");
                 }else{
                   console.log("Created NPM package");
+                  fs.mkdir('./'+answers.projectName+'/models',(err)=>{
+                    if(err){
+                      console.log("Error Creating Model File " + err);
+                    }else{
+                      console.log("Created Model File");
+                      fs.writeFile('./.env','APP_NAME='+answers.projectName,(err)=>{
+                        if(err){
+                          console.log("Error creating refernce env file" + err);
+                        }else{
+                          console.log("Created refernce env file");
+                          console.log("Project Created");
+                        }
+                      })
+                    }
+                  })
                 }
               })
             }
